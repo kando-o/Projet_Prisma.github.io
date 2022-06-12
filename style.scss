@@ -1,0 +1,155 @@
+*,::before,::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+.container {
+    width: 1450px;
+    margin: 0 auto;
+    height: fit-content;
+    position: relative;
+}
+
+nav{
+    width: 100%;
+    margin: 0 auto;
+    height: fit-content;
+    & ul{
+        position: fixed;
+        max-width: 1450px;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        margin: 0 auto;
+        top: 0;
+        z-index: 999;
+        padding: 1rem;
+        opacity: .7;
+        background-color: #000;
+        & li{
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            list-style: none;
+            & a{
+                text-decoration: none;   
+                margin: 1.2rem;    
+                color: whitesmoke;
+            }
+        }
+    }
+}
+.banner{
+    & img{
+        width: 100%;
+    }
+}
+.forceAwakens{
+    display: flex;
+    width: 100%;
+    margin: 4rem auto;
+    & .txtforceAwakens{
+        width: 40%;
+        text-align: center;
+        margin: 0 0rem 0rem 9rem;
+
+    }
+    & aside{
+        width: 40%;
+        margin: 0 auto;
+        position: sticky;
+        top: 0;
+        height: 510px;
+        & img{
+           width:  40%;
+           height: 100%;
+        }
+    }
+    &  p {
+        width: 60%;
+        text-align: start;
+        margin: 2rem auto;
+        margin-bottom: 1rem ;
+    }
+}
+.parallax{
+    width: 100%;
+    height: 45rem;
+    // border: 1px solid;
+    background: url(/Ressouce/Image/kiloren-2x.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+    // z-index: -1;
+    border: 1px solid;
+}
+.longTime{
+    width: 54%;
+    margin: 3rem auto;
+    // border: 1px solid;
+    & h3{
+        text-align: center;
+    }
+    & .imageTime img{
+        float: left;
+        margin-right: 1.5rem;
+    }
+}
+.parallaxFooter{
+    width: 100%;
+    height: 25rem;
+    // border: 1px solid;
+    background: url(/Ressouce/Image/stormtroopers-2x.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+footer{
+    width: 100%;
+    margin-bottom: 2rem;
+    & .blocFooter{
+        width: 100%;
+        height: 30rem;
+        background: url(/Ressouce/Image/darthvader_2x.jpg) no-repeat center;
+        color: whitesmoke;
+        background-color: #181818;
+        & .displayItem{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            & h3{
+                width: 100%;
+                text-align: center;
+                margin: 4rem;
+                height: fit-content;
+                font-weight: 100;
+                color: grey;
+            }
+        }
+        & .blocFooter--content_left,
+        .blocFooter--content_mid,
+        .blocFooter--content_right{
+            width: 25%;
+            text-decoration: underline;
+            color: grey;
+            text-align: center;
+            & img {
+                margin: 0rem 1rem;
+                transition: .2s ease-in-out;
+            }
+            & img:hover {
+                transform: scale(1.4);
+            }
+        } 
+        & .blocFooter--content_right{
+            text-decoration: none;
+        }
+        & .imageBlocFooter{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
