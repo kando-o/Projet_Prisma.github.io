@@ -247,8 +247,8 @@ footer{
     .imageTime{
         width: 100%;
         height: 12rem;
-        background: url(/Ressouce/Image/r2d2_c3p0.jpg) no-repeat center;
-        background-size: cover;
+        background: url(./Ressouce/Image/r2d2_c3p0.jpg) no-repeat center;
+        background-size: contain;
         margin: 1rem auto;
     }
     .imageTime img{
