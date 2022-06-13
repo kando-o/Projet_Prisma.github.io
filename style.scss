@@ -13,20 +13,21 @@ body{
     position: relative;
 }
 .hiddenContainer{
-    z-index: 9999;
+    z-index: 9998;
     background: black;
 }
 // Button Hamburger
 .navHamburger{
-    z-index: 1000;
+    display: none!important;
+    z-index: 9999;
     position: fixed;
     top: 1rem;
     right: 1rem;
     background: black;
     box-shadow: 0 0 5px black;
     opacity: .9;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 2rem;
+    height: 2rem;
     cursor: pointer;
     display: flex;
     flex-direction: column;
@@ -208,6 +209,13 @@ footer{
 @media screen and (max-width: 450px){
     .container{
         width: auto;
+    }
+    .navHamburger{
+        display: block!important;
+        & .b1, .b2, .b3{
+            width: 2rem;
+            height: .5rem;
+        }
     }
     .forceAwakens{
         margin: 0 auto;

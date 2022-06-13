@@ -18,20 +18,21 @@ body {
 }
 
 .hiddenContainer {
-  z-index: 9999;
+  z-index: 9998;
   background: black;
 }
 
 .navHamburger {
-  z-index: 1000;
+  display: none !important;
+  z-index: 9999;
   position: fixed;
   top: 1rem;
   right: 1rem;
   background: black;
   box-shadow: 0 0 5px black;
   opacity: 0.9;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 2rem;
+  height: 2rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -220,6 +221,14 @@ footer .blocFooter .imageBlocFooter {
 @media screen and (max-width: 450px) {
   .container {
     width: auto;
+  }
+
+  .navHamburger {
+    display: block !important;
+  }
+  .navHamburger .b1, .navHamburger .b2, .navHamburger .b3 {
+    width: 2rem;
+    height: 0.5rem;
   }
 
   .forceAwakens {
