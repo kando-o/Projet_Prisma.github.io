@@ -12,6 +12,34 @@ body{
     height: fit-content;
     position: relative;
 }
+.hiddenContainer{
+    z-index: 9999;
+    background: black;
+}
+// Button Hamburger
+.navHamburger{
+    z-index: 1000;
+    position: fixed;
+    top: 1rem;
+    right: 1rem;
+    background: black;
+    box-shadow: 0 0 5px black;
+    opacity: .9;
+    width: 1.5rem;
+    height: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    & .b1 , .b2 , .b3{
+        background-color: whitesmoke;
+        width: 2rem;
+        margin: 2px;
+        height: 1rem;
+        border-radius: 1rem;
+    }
+}
 
 nav{
     width: 100%;
@@ -47,6 +75,18 @@ nav{
         & li:hover {
             transform: scale(1.2);
         }
+    }
+}
+@media screen and (max-width:450px){
+    
+    nav{
+        display: none;
+    }
+    aside{
+        display:none
+    }
+    .banner{
+        width: 100vw;
     }
 }
 .banner{
@@ -118,7 +158,6 @@ nav{
 }
 footer{
     width: 100%;
-    margin-bottom: 2rem;
     & .blocFooter{
         width: 100%;
         height: 30rem;
@@ -128,6 +167,7 @@ footer{
         & .displayItem{
             display: flex;
             flex-wrap: wrap;
+            width: 100%;
             justify-content: space-around;
             & h3{
                 width: 100%;
@@ -160,5 +200,92 @@ footer{
             width: 100%;
             height: 100%;
         }
+    }
+}
+
+// MediaQueries
+
+@media screen and (max-width: 450px){
+    .container{
+        width: auto;
+    }
+    .forceAwakens{
+        margin: 0 auto;
+        width: 100%;
+        & p{
+            width: 89%;
+            text-align: center;
+            margin: 1 auto;
+        }
+        & h3{
+            font-size: .9rem;
+        }
+        & .txtforceAwakens{
+            margin: 0 auto;
+            width: 80%;
+        }
+    }
+    .parallax {
+        background-attachment: inherit;
+        height: 18rem;
+        background-size: cover;
+    }
+    .longTime{
+        width: 75%;
+        & p {
+            font-size: .7rem;
+        }
+    }
+    .imageTime{
+        width: 100%;
+        height: 12rem;
+        background: url(/Ressouce/Image/r2d2_c3p0.jpg) no-repeat center;
+        background-size: cover;
+        margin: 1rem auto;
+    }
+    .imageTime img{
+        display: none;
+    }
+    .parallaxFooter{
+        height: 14.5rem;
+        background-size: cover;
+    }
+    .blocFooter{
+        height: 14.5rem!important;
+        background-size: cover!important;
+        background-position: center;
+    
+    }
+    .displayItem h3{
+        display: none;
+    }
+    .blocFooter--content_left,
+    .blocFooter--content_mid,
+    .blocFooter--content_right{
+        width: 49%!important;
+        font-size: .6rem;
+    }
+    .blocFooter--content_left,
+    .blocFooter--content_mid{
+        margin: 1rem auto;
+    }
+    .blocFooter--content_right{
+        display: flex;
+        position: absolute;
+        margin: .5rem;
+        width: 100%!important;
+        height: fit-content;
+        bottom: 0;
+        & p{ 
+            width: 49%!important;
+            height: fit-content;
+            padding: 1rem;
+        }
+        & img{
+            margin: 0 .4rem!important;
+        }
+    }
+    .reseau {
+        width: 50%;
     }
 }
