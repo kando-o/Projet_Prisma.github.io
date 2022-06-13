@@ -23,8 +23,6 @@ body{
     position: fixed;
     top: 1rem;
     right: 1rem;
-    background: black;
-    box-shadow: 0 0 5px black;
     opacity: .9;
     width: 2rem;
     height: 2rem;
@@ -39,6 +37,8 @@ body{
         margin: 2px;
         height: 1rem;
         border-radius: 1rem;
+            box-shadow: 0 0 5px black;
+
     }
 }
 
