@@ -6,41 +6,115 @@
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
+
+//Container de tout la page
+
 .container {
     width: 1450px;
     margin: 0 auto;
     height: fit-content;
     position: relative;
 }
-.hiddenContainer{
-    z-index: 9998;
-    background: black;
-}
+
 // Button Hamburger
+
 .navHamburger{
     display: none!important;
     z-index: 9999;
     position: fixed;
     top: 1rem;
     right: 1rem;
-    opacity: .9;
-    width: 2rem;
+    width: 2.5rem;
     height: 2rem;
     cursor: pointer;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    transition: .2s ease-in-out;
+    overflow: hidden;
+
+    // Button Hamburger barre
+
     & .b1 , .b2 , .b3{
         background-color: whitesmoke;
         width: 2rem;
         margin: 2px;
-        height: 1rem;
+        height: 2rem;
         border-radius: 1rem;
-            box-shadow: 0 0 5px black;
+        box-shadow: 0 0 4px black;
+        transition: .4s ease-in-out;
+    }
+    & .b1:focus , .b2:focus , .b3:focus{
+        transform: scale(1.2);
+        background: red;
+    }
+    .translateb1{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    .rotateb2{
+        transform: rotate(45deg); 
+        box-shadow: none;
+    }
+    .translateb3{
+        position: relative;
+        transform: rotate(-45deg); 
+        top: -.6rem;
+        box-shadow: none;
 
     }
 }
+.navHamburger:focus{
+    transform: scale(1.2);
+    color: red;
+}
+
+// Bground Menu cacher
+
+.bgMenuHidden{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background: url(./Ressouce/Image/header-bg.png);
+    z-index: 900;
+    right: -110%;
+    top: 0;
+    opacity: 0;
+   transition: all .9s ease-in-out;
+    & .menuHidden{
+        position: absolute;
+        text-align: center;
+        width: 60%;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        box-shadow: 0px 0px 5px whitesmoke;
+        border-radius: 1rem;
+        & li{
+            padding: 2rem 0rem;
+            color: whitesmoke;
+            list-style: none;
+            & a{
+                text-decoration: none;
+                color: whitesmoke;
+                text-transform: uppercase;
+            }
+        }
+        & a:focus{
+            text-shadow:  0 0 25px red, 0 0 10px yellow;
+            color: red;
+            border: none;
+            outline: none;
+        }
+    }
+}
+.hidden{
+    right: 0;
+    opacity: 1;
+}
+
+// Navigation
 
 nav{
     width: 100%;
@@ -62,12 +136,14 @@ nav{
             font-size: 1.5rem;
             text-transform: uppercase;
             list-style: none;
+            transition: .2s ease-in-out;
+
             & a{
                 text-decoration: none;   
                 margin: 1.1rem;    
                 color: whitesmoke;
             }
-            & a:hover{
+            & a:hover, a:focus{
                 text-shadow:  0 0 25px red, 0 0 10px yellow;
                 color: white;
                 opacity: 1;
@@ -78,6 +154,9 @@ nav{
         }
     }
 }
+
+// Responsive Navigation
+
 @media screen and (max-width:450px){
     
     nav{
@@ -95,6 +174,9 @@ nav{
         width: 100%;
     }
 }
+
+// Section *Star Wars, The Force Awakens*
+
 .forceAwakens{
     display: flex;
     width: 100%;
@@ -105,6 +187,9 @@ nav{
         margin: 0 0rem 0rem 9rem;
 
     }
+
+    // Aside + photo sticky
+
     & aside{
         width: 40%;
         margin: 0 auto;
@@ -124,6 +209,9 @@ nav{
         margin-bottom: 1rem ;
     }
 }
+
+// Parallax Kiloren
+
 .parallax{
     width: 100%;
     height: 45rem;
@@ -136,6 +224,9 @@ nav{
     z-index: -1;
     // border: 3px solid red;
 }
+
+// Section *A long time ago*
+
 .longTime{
     width: 54%;
     margin: 3rem auto;

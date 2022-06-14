@@ -17,33 +17,96 @@ body {
   position: relative;
 }
 
-.hiddenContainer {
-  z-index: 9998;
-  background: black;
-}
-
 .navHamburger {
   display: none !important;
   z-index: 9999;
   position: fixed;
   top: 1rem;
   right: 1rem;
-  opacity: 0.9;
-  width: 2rem;
+  width: 2.5rem;
   height: 2rem;
   cursor: pointer;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  transition: 0.2s ease-in-out;
+  overflow: hidden;
 }
 .navHamburger .b1, .navHamburger .b2, .navHamburger .b3 {
   background-color: whitesmoke;
   width: 2rem;
   margin: 2px;
-  height: 1rem;
+  height: 2rem;
   border-radius: 1rem;
-  box-shadow: 0 0 5px black;
+  box-shadow: 0 0 4px black;
+  transition: 0.4s ease-in-out;
+}
+.navHamburger .b1:focus, .navHamburger .b2:focus, .navHamburger .b3:focus {
+  transform: scale(1.2);
+  background: red;
+}
+.navHamburger .translateb1 {
+  transform: translateX(-100%);
+  opacity: 0;
+}
+.navHamburger .rotateb2 {
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+.navHamburger .translateb3 {
+  position: relative;
+  transform: rotate(-45deg);
+  top: -0.6rem;
+  box-shadow: none;
+}
+
+.navHamburger:focus {
+  transform: scale(1.2);
+  color: red;
+}
+
+.bgMenuHidden {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  background: url(./Ressouce/Image/header-bg.png);
+  z-index: 900;
+  right: -110%;
+  top: 0;
+  opacity: 0;
+  transition: all 0.9s ease-in-out;
+}
+.bgMenuHidden .menuHidden {
+  position: absolute;
+  text-align: center;
+  width: 60%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0px 0px 5px whitesmoke;
+  border-radius: 1rem;
+}
+.bgMenuHidden .menuHidden li {
+  padding: 2rem 0rem;
+  color: whitesmoke;
+  list-style: none;
+}
+.bgMenuHidden .menuHidden li a {
+  text-decoration: none;
+  color: whitesmoke;
+  text-transform: uppercase;
+}
+.bgMenuHidden .menuHidden a:focus {
+  text-shadow: 0 0 25px red, 0 0 10px yellow;
+  color: red;
+  border: none;
+  outline: none;
+}
+
+.hidden {
+  right: 0;
+  opacity: 1;
 }
 
 nav {
@@ -70,13 +133,14 @@ nav ul li {
   font-size: 1.5rem;
   text-transform: uppercase;
   list-style: none;
+  transition: 0.2s ease-in-out;
 }
 nav ul li a {
   text-decoration: none;
   margin: 1.1rem;
   color: whitesmoke;
 }
-nav ul li a:hover {
+nav ul li a:hover, nav ul li a:focus {
   text-shadow: 0 0 25px red, 0 0 10px yellow;
   color: white;
   opacity: 1;
